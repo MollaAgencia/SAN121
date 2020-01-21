@@ -3,7 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="conteudo" runat="server">
-    <br />
     <div class="d-flex h-100 w-100">
         <div class="my-auto mx-md-4 pt-4 pt-md-0">
             <div class="row mx-0">
