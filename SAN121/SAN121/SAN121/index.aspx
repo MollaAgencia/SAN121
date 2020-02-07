@@ -57,10 +57,10 @@
                     <p class="font-weight-bold mb-0">*Para mais informações, entre em contato conosco através dos seguintes canais:</p>
                     <ul class="px-0">
                         <li class="d-inline-block mr-3">
-                            <a href="https://api.whatsapp.com/send?phone=+5511995518459" title="ESCREVA_AQUI" class="font-weight-bold text-blue">&#8226; WhatsApp: (11) 99551-8459</a>
+                            <a href="https://api.whatsapp.com/send?phone=+5511995518459" class="font-weight-bold text-blue">&#8226; WhatsApp: (11) 96900-9126</a>
                         </li>
                         <li class="d-inline-block">
-                            <a href="tel:0800-721-0100" title="ESCREVA_AQUI" class="font-weight-bold text-blue">&#8226; Telefone: 0800-721-0100</a>
+                            <a href="tel:0800-721-0100" class="font-weight-bold text-blue">&#8226; Telefone: 0800-721-0100</a>
                         </li>
                     </ul>
                 </div>
