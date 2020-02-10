@@ -19,8 +19,7 @@
                 </div>
 
                 <div class="col-12 col-sm-12 col-md-12 col-lg bg-blue pt-4 px-md-5 pb-3">
-                    <h5 class="text-center text-yellow text-uppercase font-weight-bold">Preencha seus dados<br>
-                        e entre nessa jornada:</h5>
+                    <h5 class="text-center text-yellow text-uppercase font-weight-bold">Preencha seus dados<br>e entre nessa jornada:</h5>
 
                     <div id="form-cadastro" class="mt-3">
                         <div class="form-group">
@@ -49,7 +48,6 @@
                             <div id="msgFinal" ></div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
             <div class="mt-5 clearfix">
@@ -71,4 +69,15 @@
         </div>
     </div>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="jsFooter" runat="server"></asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="jsFooter" runat="server">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149132442-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-149132442-2');
+    </script>
+
+</asp:Content>
