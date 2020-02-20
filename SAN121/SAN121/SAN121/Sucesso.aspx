@@ -18,9 +18,9 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149132442-2"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'UA-149132442-2');
+	  	function gtag(){dataLayer.push(arguments);}
+	  	gtag('js', new Date());
+	  	gtag('config', 'UA-149132442-2');
 	</script>
 
 </asp:Content>
