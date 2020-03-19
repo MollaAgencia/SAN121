@@ -13,7 +13,7 @@
 
                     <p>Nesta etapa inicial do ano de 2020, estamos proporcionando <b>aos pontos de venda parceiros</b> uma grande oportunidade de trabalhar com os produtos mais importantes de nosso portfólio <b>Sanofi Medley</b>, fornecendo <b>descontos impedíveis e lançamentos</b> para você adiquirir.</p>
 
-                    <p><b>A partir do mês de fevereiro</b>, você receberá uma série de <b>e-mails</b> e comunicados por <b>WhatsApp</b> para usufruir de todas as <b>ofertas</b>. Então, fique ligado para acompanhar tudo o que esta rolando!</p>
+                    <p><b>A partir do próximo mês</b>, você receberá uma série de <b>e-mails</b> e comunicados por <b>WhatsApp</b> para usufruir de todas as <b>ofertas</b>. Então, fique ligado para acompanhar tudo o que esta rolando!</p>
 
                     <h3 class="text-uppercase font-weight-bold text-blue mb-0">Aproveite essa chance!</h3>
                 </div>
