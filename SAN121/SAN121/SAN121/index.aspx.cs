@@ -61,6 +61,7 @@ namespace SAN121
                     sqlParameter.Add("@Email", System.Data.SqlDbType.VarChar).Value = Email;
                     sqlParameter.Add("@Telefone", System.Data.SqlDbType.VarChar).Value = Telefone;
                     sqlParameter.Add("@CNPJ", System.Data.SqlDbType.VarChar).Value = CNPJ;
+                    sqlParameter.Add("@Origem", System.Data.SqlDbType.Char).Value = "CON";
                     int dtb_result = sqlServer.DbExecuteNonQuery("sp_site_cadastrarCampanha", sqlParameter, System.Data.CommandType.StoredProcedure);
                     if (dtb_result > 0)
                     {
