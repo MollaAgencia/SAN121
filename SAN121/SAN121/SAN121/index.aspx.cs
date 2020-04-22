@@ -35,7 +35,7 @@ namespace SAN121
 
 
         [System.Web.Services.WebMethod()]
-        public static string MTD_CadastroArmazena(string Nome, string Email, string Telefone, string CNPJ)
+        public static string MTD_CadastroArmazena(string Nome, string Email, string Telefone, string CNPJ, string profissional, string profissao, string conselho)
         {
             string st_json = "";
             Classes.RetornoRequisicao retornoRequisicao = new Classes.RetornoRequisicao();
@@ -62,6 +62,10 @@ namespace SAN121
                     sqlParameter.Add("@Telefone", System.Data.SqlDbType.VarChar).Value = Telefone;
                     sqlParameter.Add("@CNPJ", System.Data.SqlDbType.VarChar).Value = CNPJ;
                     sqlParameter.Add("@Origem", System.Data.SqlDbType.Char).Value = "CON";
+                    sqlParameter.Add("@profissional", System.Data.SqlDbType.VarChar).Value = profissional;
+                    sqlParameter.Add("@profissao", System.Data.SqlDbType.VarChar).Value = profissao;
+                    sqlParameter.Add("@conselho", System.Data.SqlDbType.VarChar).Value = conselho;
+                    
                     int dtb_result = sqlServer.DbExecuteNonQuery("sp_site_cadastrarCampanha", sqlParameter, System.Data.CommandType.StoredProcedure);
                     if (dtb_result > 0)
                     {
