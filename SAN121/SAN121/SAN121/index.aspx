@@ -12,10 +12,9 @@
                 <div class="col-12 col-sm-12 col-md-12 col-lg">
                     <h2 class="font-weight-bold mb-3">Cadastre-se e mantenha uma<br class="d-none d-sm-none d-md-block">
                         parceria de sucesso
-                        <br class="d-none d-sm-none d-md-block">
-                        com a <span class="text-blue">SANOFI!</span></h2>
+                        <br class="d-none d-sm-none d-md-block"></h2>
 
-                    <p>Para que você possa focar no que é importante <b>nesse período de isolamento, </b>nosso time criou mais canais de contato para te manter atualizado de todos os descontos,lançamentos e novidades Sanofi Medley.</p>
+                    <p>Para que você possa focar no que é importante <b>nesse período de isolamento, </b>nosso time criou mais canais de contato para te manter atualizado de todos os descontos,lançamentos e novidades.</p>
 
                     <p><b>A partir do próximo mês</b>, você receberá uma série de <b>e-mails</b> e comunicados por <b>WhatsApp</b> para usufruir de todas as <b>ofertas</b>. Então, fique ligado para acompanhar tudo o que esta rolando!</p>
 
