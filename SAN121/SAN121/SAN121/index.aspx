@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="conteudo" runat="server">
+    <input type="hidden" id="hdnWhatsApp" name="hdnWhatsApp" value="">
+    <input type="hidden" id="hdnTelegran" name="hdnTelegran" value="">
+    <input type="hidden" id="hdnWeChat" name="hdnWeChat" value="">
     <div class="d-flex h-100 w-100">
         <div class="my-auto mx-md-4 pt-4 pt-md-0">
             <div class="row mx-0">
@@ -45,6 +48,29 @@
                             <label class="text-white mb-0">CNPJ</label>
                             <input type="text" name="cnpj" id="ipt_cnpj" class="form-control rounded-0 border-0" mask-cnpj valida-cnpj maxlength="18" required>
                             <div id="alertCNPJ" class="alertError mt-1"></div>
+                        </div>
+                        <div class="mb-2"></div>
+                        <div class="row">
+                            <div class="col-md-12" id="divCamposPreferencia">
+                                <label class="text-white mb-1">Quais dos canais abaixo você já utiliza ou tem preferência?</label>
+                                <div class="form-check mb-2">
+                                    <input type="checkbox" class="form-check-input" value="WatsApp" id="checkWatsApp">
+                                    <label class="form-check-label text-white mb-0" for="CheckWatsApp">WhatsApp</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <input type="checkbox" class="form-check-input" id="checkTeletram">
+                                    <label class="form-check-label text-white mb-0" for="checkTeletram">Telegram</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <input type="checkbox" class="form-check-input" id="checkWeChat">
+                                    <label class="form-check-label text-white mb-0" for="checkWeChat">We Chat</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <input type="checkbox" class="form-check-input" id="checkOutros">
+                                    <label class="form-check-label text-white mb-0" for="checkOutros">Outros</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                        </div>
+                        <div class="form-group d-none" id="divCanalPreferencia">
+                            <label class="text-white mb-0">Informe o canal de preferência</label>
+                            <input type="text" name="CanalPreferencia" id="txtCanalPreferencia" class="form-control rounded-0 border-0">
+                            <div id="alertAlertCanalPreferencia" class="alertError mt-1"></div>
                         </div>
                         <div>
                             <label class="text-white">Este contato também é profissional de saúde?</label>
@@ -119,23 +145,6 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149132442-2"></script>
     <script>
-        $('#SelectProfessional').on("change", function (event) {
-            var selectSIM = $('#liberacamps').val();
-            var selectNAO = $('#EscondeCamps').val();
-
-            var selectedCountry = $(this).children("option:selected").val();
-
-            if (selectedCountry == selectSIM) {
-                $('#habilita').removeClass('d-none');
-                $('#habilitado').removeClass('d-none');
-            } else if (selectedCountry == selectNAO) {
-                $('#habilita').addClass('d-none');
-                $('#habilitado').addClass('d-none');
-            }
-
-
-        });
-
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());

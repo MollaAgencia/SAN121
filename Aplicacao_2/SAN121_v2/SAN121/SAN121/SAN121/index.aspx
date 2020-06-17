@@ -46,6 +46,26 @@
                             <input type="text" name="cnpj" id="ipt_cnpj" class="form-control rounded-0 border-0" mask-cnpj valida-cnpj maxlength="18" required>
                             <div id="alertCNPJ" class="alertError mt-1"></div>
                         </div>
+                        <div class="mb-2"></div>
+                        <div class="row">
+                            <div class="col-md-12" id="divCamposPreferencia">
+                                <div class="form-group">
+                                    <label class="text-white mb-0">Quais dos canais abaixo você já utiliza ou tem preferência?</label>
+                                    <select id="CanalPreferencia" name="CanalPreferencia" class="form-control" onchange="ConfiguraCampos();" required>
+                                        <option value="">Seleciona</option>
+                                        <option value="WhatsApp">WhatsApp</option>
+                                        <option value="Telegram">Telegram</option>
+                                        <option value="We chat">We chat</option>
+                                        <option value="Outro">Outro</option>
+                                    </select>                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group d-none" id="divCanalPreferencia">
+                            <label class="text-white mb-0">Informe o canal de preferência</label>
+                            <input type="text" name="CanalPreferencia" id="txtCanalPreferencia" class="form-control rounded-0 border-0">
+                            <div id="alertAlertCanalPreferencia" class="alertError mt-1"></div>
+                        </div>
                         <div>
                             <label class="text-white">Este contato também é profissional de saúde?</label>
                             <select id="SelectProfessional" name="SelectProfessional" class="form-control">

@@ -1,5 +1,55 @@
 $(document).ready(function () {
     // Cadastro
+    $('#SelectProfessional').on("change", function (event) {
+        var selectSIM = $('#liberacamps').val();
+        var selectNAO = $('#EscondeCamps').val();
+
+        var selectedCountry = $(this).children("option:selected").val();
+
+        if (selectedCountry == selectSIM) {
+            $('#habilita').removeClass('d-none');
+            $('#habilitado').removeClass('d-none');
+        } else if (selectedCountry == selectNAO) {
+            $('#habilita').addClass('d-none');
+            $('#habilitado').addClass('d-none');
+        }
+
+    });
+    $('#checkWatsApp').on("click", function (event) {
+        if ($("#checkWatsApp").is(":checked") == true) {
+            $("#hdnWhatsApp").val("WhatsApp");
+        }
+        else {
+            $("#hdnWhatsApp").val("");
+        }
+    });
+    $('#checkTeletram').on("click", function (event) {
+        if ($("#checkTeletram").is(":checked") == true) {
+            $("#hdnTelegran").val("Telegram");
+        }
+        else {
+            $("#hdnTelegran").val("");
+        }
+    });
+    $('#checkWeChat').on("click", function (event) {
+        if ($("#checkWeChat").is(":checked") == true) {
+            $("#hdnWeChat").val("WeChat");
+        }
+        else {
+            $("#hdnWeChat").val("");
+        }
+    });
+    $('#checkOutros').on("click", function (event) {
+        if ($("#checkOutros").is(":checked") == true) {
+            $('#divCanalPreferencia').removeClass("d-none");
+            $('#txtCanalPreferencia').val("");
+        }
+        else {
+            $('#divCanalPreferencia').addClass("d-none");
+            $('#txtCanalPreferencia').val("");
+        }
+    });
+
     $('#btnEnviar').bind('click', function (event) {
         event.preventDefault();
 
@@ -9,9 +59,22 @@ $(document).ready(function () {
         if ($("#ipt_nome").val() == "" ||
             $("#ipt_email").val() == "" ||
             $("#ipt_telefone").val() == "" ||
-            $("#ipt_cnpj").val() == "") {
+            $("#ipt_cnpj").val() == ""          
+
+        ) {
             Swal.fire('Existem campos que não foram preenchidos.');
             return false;
+        }
+        else if ($("#hdnWhatsApp").val() == "")
+        {
+            if ($("#hdnTelegran").val() == "") {
+                if ($("#hdnWeChat").val() == "") {
+                    if ($("#txtCanalPreferencia").val() == "") {
+                        Swal.fire('Informe ao menos um contato de preferência.');
+                        return false;
+                    } 
+                }
+            }
         }
 
         // Valida CNPJ antes de enviar
@@ -65,6 +128,12 @@ $(document).ready(function () {
             return false;
         }
 
+        // Concatena as opções selecionadas polo usuário referente aos canais de comunicação que ele prefere
+        var canaisPreferencia = " | " + ($("#hdnWhatsApp").val() != "" ? $("#hdnWhatsApp").val() + " | " : "") +
+            ($("#hdnTelegran").val() != "" ?  $("#hdnTelegran").val() + " | " : "") +
+            ($("#hdnWeChat").val() != "" ? $("#hdnWeChat").val() + " | " : "") +
+            ($("#txtCanalPreferencia").val() != "" ? $("#txtCanalPreferencia").val() +  " | " : "");
+        
         // Caso os campos esteja corretos, o cadastro é enviado
         let parametros = {};
         parametros.Nome = $('#ipt_nome').val();
@@ -74,6 +143,7 @@ $(document).ready(function () {
         parametros.profissional = $('#SelectProfessional').val();
         parametros.profissao = $('#Professional').val();
         parametros.conselho = $('#numConselho').val();
+        parametros.CanalPreferencia = canaisPreferencia;
 
 
         $.ajax({

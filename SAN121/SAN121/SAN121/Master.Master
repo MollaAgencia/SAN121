@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="css/bootstrap-multiselect.css" rel="stylesheet" />
     <!-- Sweet Alert -->
 
     <title>Relacionamento Conecta</title>
@@ -27,6 +28,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8" charset="UTF-8"></script>
     <script src="js/mascaraValidacao.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/bootstrap-multiselect.min.js"></script>
     <asp:ContentPlaceHolder ID="jsFooter" runat="server"></asp:ContentPlaceHolder>
 </body>
 </html>

@@ -9,7 +9,10 @@ $(document).ready(function () {
         if ($("#ipt_nome").val() == "" ||
             $("#ipt_email").val() == "" ||
             $("#ipt_telefone").val() == "" ||
-            $("#ipt_cnpj").val() == "") {
+            $("#ipt_cnpj").val() == "" ||
+            $("#CanalPreferencia").val() == "" ||
+            $("#txtCanalPreferencia").val() == "")
+        {
             Swal.fire('Existem campos que não foram preenchidos.');
             return false;
         }
@@ -74,6 +77,7 @@ $(document).ready(function () {
         parametros.profissional = $('#SelectProfessional').val();
         parametros.profissao = $('#Professional').val();
         parametros.conselho = $('#numConselho').val();
+        parametros.CanalPreferencia = $('#txtCanalPreferencia').val();
 
 
         $.ajax({

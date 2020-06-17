@@ -7,3 +7,7 @@
 *.suo
 */*/*.suo
 *\*\.vs\*
+/SAN121/SAN121/SAN121/Properties/PublishProfiles/Aplicação 1.pubxml
+/SAN121/SAN121/SAN121/Properties/PublishProfiles/Aplicação 1.pubxml.user
+/SAN121/SAN121/SAN121/Properties/PublishProfiles/Aplicação 2.pubxml
+/SAN121/SAN121/SAN121/Properties/PublishProfiles/Aplicação 2.pubxml.user
