@@ -3,9 +3,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="conteudo" runat="server">
+    <input type="hidden" id="hdnWhatsApp" name="hdnWhatsApp" value="">
+    <input type="hidden" id="hdnTelegran" name="hdnTelegran" value="">
+    <input type="hidden" id="hdnWeChat" name="hdnWeChat" value="">
     <div class="d-flex h-100 w-100">
         <div class="my-auto mx-md-4 pt-4 pt-md-0">
             <div class="row mx-0">
+                <%-- <div class="col-12 col-sm-12 col-md-12 col-lg">
+                    <h2 class="font-weight-bold mb-3">Cadastre-se e tenha acesso à
+                        <br class="d-none d-sm-none d-md-block">
+                        descontos incríveis em medicamentos!
+                    </h2>
+
+                    <p>Para que você possa focar no que é importante nesse período de isolamento, nosso time vem apresentar mais canais de contato para te manter atualizado de todos os descontos, lançamentos e novidades.</p>
+
+                    <p>Tudo de um jeito rápido e prático. </p>
+                    <p>Basta fazer seu cadastro e, a partir do próximo mês você já passa a comunicados através de canais digitais (e-mail, SMS, Whats App, Telegram, etc) para usufruir de todas as nossas ofertas e condições, desde que faça o cadastro para tanto. </p>
+
+                    <h5 class="text-uppercase font-weight-bold text-blue mb-0">Não perca essa oportunidade de participar do novo modelo de interação do mercado farmacêutico!</h5>
+                </div>--%>
                 <div class="col-12 col-sm-12 col-md-12 col-lg">
                     <h2 class="font-weight-bold mb-3">Cadastre-se e tenha acesso à <br class="d-none d-sm-none d-md-block">
                         descontos incríveis em medicamentos!
@@ -39,8 +55,6 @@
                             <input type="text" name="telefone" id="ipt_telefone" class="form-control rounded-0 border-0" mask-telefone valida-telefone maxlength="14" required>
                             <div id="alertCelular" class="alertError mt-1"></div>
                         </div>
-
-
                         <div class="form-group">
                             <label class="text-white mb-0">CNPJ</label>
                             <input type="text" name="cnpj" id="ipt_cnpj" class="form-control rounded-0 border-0" mask-cnpj valida-cnpj maxlength="18" required>
@@ -49,17 +63,20 @@
                         <div class="mb-2"></div>
                         <div class="row">
                             <div class="col-md-12" id="divCamposPreferencia">
-                                <div class="form-group">
-                                    <label class="text-white mb-0">Quais dos canais abaixo você já utiliza ou tem preferência?</label>
-                                    <select id="CanalPreferencia" name="CanalPreferencia" class="form-control" onchange="ConfiguraCampos();" required>
-                                        <option value="">Seleciona</option>
-                                        <option value="WhatsApp">WhatsApp</option>
-                                        <option value="Telegram">Telegram</option>
-                                        <option value="We chat">We chat</option>
-                                        <option value="Outro">Outro</option>
-                                    </select>                                    
+                                <label class="text-white mb-1">Quais dos canais abaixo você já utiliza ou tem preferência?</label>
+                                <div class="form-check mb-2">
+                                    <input type="checkbox" class="form-check-input" value="WatsApp" id="checkWatsApp">
+                                    <label class="form-check-label text-white mb-0" for="CheckWatsApp">WhatsApp</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <input type="checkbox" class="form-check-input" id="checkTeletram">
+                                    <label class="form-check-label text-white mb-0" for="checkTeletram">Telegram</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <input type="checkbox" class="form-check-input" id="checkWeChat">
+                                    <label class="form-check-label text-white mb-0" for="checkWeChat">We Chat</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <input type="checkbox" class="form-check-input" id="checkOutros">
+                                    <label class="form-check-label text-white mb-0" for="checkOutros">Outros</label>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                         </div>
                         <div class="form-group d-none" id="divCanalPreferencia">
                             <label class="text-white mb-0">Informe o canal de preferência</label>
@@ -139,22 +156,20 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149132442-2"></script>
     <script>
-        $('#SelectProfessional').on("change", function (event) {
-            var selectSIM = $('#liberacamps').val();
-            var selectNAO = $('#EscondeCamps').val();
+        //$('#SelectProfessional').on("change", function (event) {
+        //    var selectSIM = $('#liberacamps').val();
+        //    var selectNAO = $('#EscondeCamps').val();
 
-            var selectedCountry = $(this).children("option:selected").val();
+        //    var selectedCountry = $(this).children("option:selected").val();
 
-            if (selectedCountry == selectSIM) {
-                $('#habilita').removeClass('d-none');
-                $('#habilitado').removeClass('d-none');
-            } else if (selectedCountry == selectNAO) {
-                $('#habilita').addClass('d-none');
-                $('#habilitado').addClass('d-none');
-            }
-
-
-        });
+        //    if (selectedCountry == selectSIM) {
+        //        $('#habilita').removeClass('d-none');
+        //        $('#habilitado').removeClass('d-none');
+        //    } else if (selectedCountry == selectNAO) {
+        //        $('#habilita').addClass('d-none');
+        //        $('#habilitado').addClass('d-none');
+        //    }
+        //});
 
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }

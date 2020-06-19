@@ -9,7 +9,7 @@
     <div class="d-flex h-100 w-100">
         <div class="my-auto mx-md-4 pt-4 pt-md-0">
             <div class="row mx-0">
-                <div class="col-12 col-sm-12 col-md-12 col-lg">
+                <%--<div class="col-12 col-sm-12 col-md-12 col-lg">
                     <h2 class="font-weight-bold mb-3">Cadastre-se e mantenha uma<br class="d-none d-sm-none d-md-block">
                         parceria de sucesso
                         <br class="d-none d-sm-none d-md-block"></h2>
@@ -19,6 +19,19 @@
                     <p><b>A partir do próximo mês</b>, você receberá uma série de <b>e-mails</b> e comunicados por <b>WhatsApp</b> para usufruir de todas as <b>ofertas</b>. Então, fique ligado para acompanhar tudo o que esta rolando!</p>
 
                     <h3 class="text-uppercase font-weight-bold text-blue mb-0">Aproveite essa chance!</h3>
+                </div>--%>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg">
+                    <h2 class="font-weight-bold mb-3">Cadastre-se e tenha acesso à <br class="d-none d-sm-none d-md-block">
+                        descontos incríveis em medicamentos!
+                        </h2>
+
+                    <p>Para que você possa focar no que é importante nesse período de isolamento, nosso time vem apresentar mais canais de contato para te manter atualizado de todos os descontos, lançamentos e novidades.</p>
+                    
+                    <p>Tudo de um jeito rápido e prático. </p>
+                    <p>Basta fazer seu cadastro e, a partir do próximo mês você já passa a comunicados através de canais digitais (e-mail, SMS, Whats App, Telegram, etc) para usufruir de todas as nossas ofertas e condições, desde que faça o cadastro para tanto. </p>
+
+                    <h5 class="text-uppercase font-weight-bold text-blue mb-0">Não perca essa oportunidade de participar do novo modelo de interação do mercado farmacêutico!</h5>
                 </div>
 
                 <div class="col-12 col-sm-12 col-md-12 col-lg bg-blue pt-4 px-md-5 pb-3">

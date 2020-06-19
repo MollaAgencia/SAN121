@@ -45,8 +45,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MollaLibrary">
-      <HintPath>..\..\..\..\LGE001\Biblioteca\MollaLibrary.dll</HintPath>
+    <Reference Include="MollaLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MollaLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -119,9 +120,8 @@
   <ItemGroup>
     <Content Include="Master.Master" />
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Aplicação 1.pubxml" />
-    <None Include="Properties\PublishProfiles\Aplicação 2.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
