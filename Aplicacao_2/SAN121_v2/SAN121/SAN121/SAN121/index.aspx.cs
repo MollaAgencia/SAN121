@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using SAN121.Classes;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -64,10 +68,12 @@ namespace SAN121
                     sqlParameter.Add("@conselho", System.Data.SqlDbType.VarChar).Value = conselho;
                     sqlParameter.Add("@CanalPreferencia", System.Data.SqlDbType.VarChar).Value = CanalPreferencia;
 
+                    //var InsertEmail = MTD_InsertEmail(Email, Nome, CNPJ);
                     int dtb_result = sqlServer.DbExecuteNonQuery("sp_site_cadastrarCampanhaTeste", sqlParameter, System.Data.CommandType.StoredProcedure);
                     if (dtb_result > 0)
                     {
-                        var status = MTD_EmailDisparo(Email, Nome);
+                        var InsertEmail = MTD_InsertEmail(Email, Nome, CNPJ);
+                        //var status = MTD_EmailDisparo(Email, Nome);
                         retornoRequisicao.PRP_Status = true;
                         retornoRequisicao.PRP_Mensagem = $"Cadastro realizado com sucesso!";
                         retornoRequisicao.PRP_TipoMensagem = MollaLibrary.EnunsApp.enum_TipoMensagem.Success;
@@ -133,6 +139,93 @@ namespace SAN121
                 mail = null;
             }
             return Status;
+        }
+        [System.Web.Services.WebMethod()]
+        public static TokenAPI MTD_GetTokenAPI()
+        {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+            TokenAPI CodToken = new TokenAPI();
+
+            //Conta deseonvolbilento
+            //string Login = "mollaincentiveprojects_allinapi";
+            //string Senha = "@1U9U3yS";
+
+
+            //Produção
+            string Login = "conectapdv_molla_allinapi";
+            string Senha = "e8AME7Uq";
+
+            //LOGIN TESTE
+            var requisicaoWeb = WebRequest.CreateHttp("https://painel02.allinmail.com.br/allinapi/?method=get_token&output=json&username=" + Login + "&password=" + Senha + "");
+            requisicaoWeb.Method = "GET";
+            requisicaoWeb.UserAgent = "RequisicaoWebDemo";
+
+            dynamic objResponse;
+
+            using (var resposta = requisicaoWeb.GetResponse())
+            {
+                var streamDados = resposta.GetResponseStream();
+                StreamReader reader = new StreamReader(streamDados);
+                objResponse = reader.ReadToEnd();
+
+                TokenAPI token = JsonConvert.DeserializeObject<TokenAPI>(objResponse);
+
+                CodToken = token;
+            }
+            return CodToken;
+        }
+
+        //[System.Web.Services.WebMethod()]
+        public static bool MTD_InsertEmail(string pEmail, string pNpme, string pCNPJ)
+        {
+            bool ret = false;
+            string listaEmail = "WORK_VISITADO";
+            string dadosPOST = "{\"nm_lista\":\"" + listaEmail + "\",\"campos\":\"nm_email;nome;CNPJWORKVISITADO\",\"valor\":\"" + pEmail + ";" + pNpme + ";" + pCNPJ.Replace(".", "").Replace("-", "").Replace("/", "") + "\"}";
+
+            var token = MTD_GetTokenAPI();
+            var requisicaoWeb = WebRequest.CreateHttp("https://painel02.allinmail.com.br/allinapi/?method=inserir_email_base&output=json&token=" + token.Token);
+
+            IEnumerable<KeyValuePair<string, string>> query = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("dados_email", dadosPOST)
+            };
+
+            var formString = string.Join("&", query.Select(x => string.Format("{0}={1}", x.Key, x.Value)));
+
+            var dados = Encoding.UTF8.GetBytes(formString);
+
+            requisicaoWeb.Method = "POST";
+            requisicaoWeb.ContentType = "application/x-www-form-urlencoded";
+            requisicaoWeb.ContentLength = dados.Length;
+            requisicaoWeb.UserAgent = "RequisicaoWebDemo";
+            try
+            {
+                //ESCREVENDO DADOS DO POST PARA O STREAM
+                using (var stream = requisicaoWeb.GetRequestStream())
+                {
+                    stream.Write(dados, 0, dados.Length);
+                    stream.Close();
+                }
+                //OBETENDO RESPOSTA
+                using (var resposta = requisicaoWeb.GetResponse())
+                {
+                    var streamDados = resposta.GetResponseStream();
+                    StreamReader reader = new StreamReader(streamDados);
+                    object objResponse = reader.ReadToEnd();
+
+                    streamDados.Close();
+                    resposta.Close();
+                }
+                ret = true;
+            }
+            catch (Exception ex)
+            {
+                ret = false;
+                throw;
+            }            
+            return ret;
         }
     }
 }
