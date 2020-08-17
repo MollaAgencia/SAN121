@@ -72,8 +72,8 @@ namespace SAN121
                     int dtb_result = sqlServer.DbExecuteNonQuery("sp_site_cadastrarCampanhaTeste", sqlParameter, System.Data.CommandType.StoredProcedure);
                     if (dtb_result > 0)
                     {
-                        var InsertEmail = MTD_InsertEmail(Email, Nome, CNPJ);
-                        //var status = MTD_EmailDisparo(Email, Nome);
+                        //var InsertEmail = MTD_InsertEmail(Email, Nome, CNPJ);//-----INSERE O ENDEREÇO DE E-MAIL CADASTRADO NA LISTA DA ALL-IN(AINDA NÃO HOMOLOGADO)-----
+                        //var status = MTD_EmailDisparo(Email, Nome);//-----FUNCIONALIDADE DESCONTINUADA----
                         retornoRequisicao.PRP_Status = true;
                         retornoRequisicao.PRP_Mensagem = $"Cadastro realizado com sucesso!";
                         retornoRequisicao.PRP_TipoMensagem = MollaLibrary.EnunsApp.enum_TipoMensagem.Success;

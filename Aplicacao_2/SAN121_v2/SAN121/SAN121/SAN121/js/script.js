@@ -1,15 +1,25 @@
 $(document).ready(function () {
     // Cadastro
     $('#SelectProfessional').on("change", function (event) {
-        var selectSIM = $('#liberacamps').val();
-        var selectNAO = $('#EscondeCamps').val();
 
-        var selectedCountry = $(this).children("option:selected").val();
+        //var selectSIM = $('#liberacamps').val();
+        //var selectNAO = $('#EscondeCamps').val();
 
-        if (selectedCountry == selectSIM) {
+        //var selectedCountry = $(this).children("option:selected").val();
+
+        //if (selectedCountry == selectSIM) {
+        //    $('#habilita').removeClass('d-none');
+        //    $('#habilitado').removeClass('d-none');
+        //} else if (selectedCountry == selectNAO) {
+        //    $('#habilita').addClass('d-none');
+        //    $('#habilitado').addClass('d-none');
+        //}
+
+        if ($("#SelectProfessional").val() == 'Sim') {
             $('#habilita').removeClass('d-none');
             $('#habilitado').removeClass('d-none');
-        } else if (selectedCountry == selectNAO) {
+        }
+        else {
             $('#habilita').addClass('d-none');
             $('#habilitado').addClass('d-none');
         }
@@ -74,6 +84,10 @@ $(document).ready(function () {
                     }
                 }
             }
+        }
+        else if ($("#SelectProfessional").val() == 0) {
+            Swal.fire('Informe se é um profissional da saúde.');
+            return false;
         }
 
         // Valida CNPJ antes de enviar

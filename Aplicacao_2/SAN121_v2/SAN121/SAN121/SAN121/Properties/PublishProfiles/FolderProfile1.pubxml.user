@@ -100,10 +100,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/22/2020 16:10:29</publishTime>
     </File>
     <File Include="bin/SAN121.dll">
-      <publishTime>07/28/2020 17:07:34</publishTime>
+      <publishTime>08/17/2020 13:40:22</publishTime>
     </File>
     <File Include="bin/SAN121.pdb">
-      <publishTime>07/28/2020 17:07:34</publishTime>
+      <publishTime>08/17/2020 13:40:22</publishTime>
     </File>
     <File Include="css/bootstrap.min.css">
       <publishTime>04/22/2020 16:10:29</publishTime>
@@ -118,7 +118,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/22/2020 16:10:29</publishTime>
     </File>
     <File Include="index.aspx">
-      <publishTime>06/19/2020 11:01:54</publishTime>
+      <publishTime>08/17/2020 13:25:10</publishTime>
     </File>
     <File Include="js/bootstrap.min.js">
       <publishTime>04/22/2020 16:10:29</publishTime>
@@ -127,13 +127,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/22/2020 16:10:29</publishTime>
     </File>
     <File Include="js/mascaraValidacao.js">
-      <publishTime>04/22/2020 16:10:29</publishTime>
+      <publishTime>08/17/2020 13:22:47</publishTime>
     </File>
     <File Include="js/popper.min.js">
       <publishTime>04/22/2020 16:10:29</publishTime>
     </File>
     <File Include="js/script.js">
-      <publishTime>06/18/2020 13:42:24</publishTime>
+      <publishTime>08/17/2020 13:23:39</publishTime>
     </File>
     <File Include="Master.Master">
       <publishTime>04/22/2020 16:10:29</publishTime>
