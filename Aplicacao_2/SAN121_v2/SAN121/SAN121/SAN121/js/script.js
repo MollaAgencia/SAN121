@@ -15,7 +15,7 @@ $(document).ready(function () {
         //    $('#habilitado').addClass('d-none');
         //}
 
-        if ($("#SelectProfessional").val() == 'Sim') {
+        if ($("#SelectProfessional").val() == 'SIM') {
             $('#habilita').removeClass('d-none');
             $('#habilitado').removeClass('d-none');
         }
