@@ -87,8 +87,8 @@
                             <label class="text-white">Este contato também é profissional de saúde?</label>
                             <select id="SelectProfessional" name="SelectProfessional" class="form-control">
                                 <option  class="" value="0" >Seleciona</option>
-                                <option class="" value="Sim" id="liberacamps">SIM</option>
-                                <option class="" value="Não" id="EscondeCamps">NÂO</option>
+                                <option class="" value="SIM" id="liberacamps">SIM</option>
+                                <option class="" value="NÃO" id="EscondeCamps">NÃO</option>
                             </select>
                         </div>
                         <div class="mb-2"></div>

@@ -69,10 +69,11 @@ namespace SAN121
                     sqlParameter.Add("@profissao", System.Data.SqlDbType.VarChar).Value = profissao;
                     sqlParameter.Add("@conselho", System.Data.SqlDbType.VarChar).Value = conselho;
                     sqlParameter.Add("@CanalPreferencia", System.Data.SqlDbType.VarChar).Value = CanalPreferencia;
+
                     int dtb_result = sqlServer.DbExecuteNonQuery("sp_site_cadastrarCampanhaTeste", sqlParameter, System.Data.CommandType.StoredProcedure);
                     if (dtb_result > 0)
                     {
-                        //var InsertEmail = MTD_InsertEmail(Email, Nome, CNPJ);//-----INSERE O ENDEREÇO DE E-MAIL CADASTRADO NA LISTA DA ALL-IN(AINDA NÃO HOMOLOGADO)-----
+                        var InsertEmail = MTD_InsertEmail(Email, Nome, CNPJ);//-----INSERE O ENDEREÇO DE E-MAIL CADASTRADO NA LISTA DA ALL-IN(AINDA NÃO HOMOLOGADO)-----
                         //var status = MTD_EmailDisparo(Email, Nome); //----FUNCIONALIDADE DESCONTINUADA-----
                         retornoRequisicao.PRP_Status = true;
                         retornoRequisicao.PRP_Mensagem = $"Cadastro realizado com sucesso!";
@@ -151,7 +152,7 @@ namespace SAN121
             string Login = "";
             string Senha = "";
 
-            //Conta deseonvolbilento
+            //Conta desenvolvimento
             //Login = "mollaincentiveprojects_allinapi";
             //Senha = "@1U9U3yS";
 
@@ -182,10 +183,28 @@ namespace SAN121
 
         //[System.Web.Services.WebMethod()]
         public static bool MTD_InsertEmail(string pEmail, string pNpme, string pCNPJ)
-        {            
+        {
+            string listaEmail = "";
+            string campoCNPJ = "";
             bool ret = false;
-            string listaEmail = "WORK_CONECTA";
-            string dadosPOST = "{\"nm_lista\":\"" + listaEmail + "\",\"campos\":\"nm_email;nome;CNPJWORKCONECTA\",\"valor\":\"" + pEmail + ";" + pNpme + ";" + pCNPJ.Replace(".", "").Replace("-", "").Replace("/", "") + "\"}";
+
+            MollaLibrary.DataSource.MicrosoftSqlServer sqlServerConsulta = new MollaLibrary.DataSource.MicrosoftSqlServer(Classes.COMMON.PRP_ConnectionString);
+            System.Data.SqlClient.SqlParameterCollection sqlParameterConsulta = sqlServerConsulta.InicializaSqlParameterCollection;
+            sqlParameterConsulta.Add("@CNPJ", System.Data.SqlDbType.NVarChar).Value = pCNPJ.Replace(".", "").Replace("-", "").Replace("/", "");
+            System.Data.DataTable dtb_resultado = sqlServerConsulta.DbExecute("SELECT CNPJ FROM Painel_Visitado_GEM WHERE CNPJ = @CNPJ", sqlParameterConsulta, System.Data.CommandType.Text);
+            
+            if (dtb_resultado != null)
+            {
+                listaEmail = "WORK_VISITADO";
+                campoCNPJ = "CNPJWORKVISITADO";
+            }
+            else
+            {
+                listaEmail = "WORK_CONECTA";
+                campoCNPJ = "CNPJWORKCONECTA";
+            }            
+            
+            string dadosPOST = "{\"nm_lista\":\"" + listaEmail + "\",\"campos\":\"nm_email;nome;" + campoCNPJ + "\",\"valor\":\"" + pEmail + ";" + pNpme + ";" + pCNPJ.Replace(".", "").Replace("-", "").Replace("/", "") + "\"}";
 
             var token = MTD_GetTokenAPI();
             var requisicaoWeb = WebRequest.CreateHttp("https://painel02.allinmail.com.br/allinapi/?method=inserir_email_base&output=json&token=" + token.Token);
