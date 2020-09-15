@@ -47,11 +47,11 @@ namespace SAN121
                 MollaLibrary.DataSource.MicrosoftSqlServer sqlServerConsulta = new MollaLibrary.DataSource.MicrosoftSqlServer(Classes.COMMON.PRP_ConnectionString);
                 System.Data.SqlClient.SqlParameterCollection sqlParameterConsulta = sqlServerConsulta.InicializaSqlParameterCollection;
                 sqlParameterConsulta.Add("@Email", System.Data.SqlDbType.VarChar).Value = Email;
-                System.Data.DataTable dtb_resultado = sqlServerConsulta.DbExecute("sp_site_consultaEmail", sqlParameterConsulta, System.Data.CommandType.StoredProcedure);
+                System.Data.DataTable dtb_resultado = sqlServerConsulta.DbExecute("sp_site_consultaEmailTeste", sqlParameterConsulta, System.Data.CommandType.StoredProcedure);
                 if (dtb_resultado != null)
                 {
                     retornoRequisicao.PRP_Status = false;
-                    retornoRequisicao.PRP_Mensagem = $"E-mail já cadastrado!";
+                    retornoRequisicao.PRP_Mensagem = $"Limite de cadastros atingido para este E-Mail!";
                     retornoRequisicao.PRP_TipoMensagem = MollaLibrary.EnunsApp.enum_TipoMensagem.Danger;
                 }
                 else if (dtb_resultado == null)
@@ -73,7 +73,7 @@ namespace SAN121
                     int dtb_result = sqlServer.DbExecuteNonQuery("sp_site_cadastrarCampanhaTeste", sqlParameter, System.Data.CommandType.StoredProcedure);
                     if (dtb_result > 0)
                     {
-                        var InsertEmail = MTD_InsertEmail(Email, Nome, CNPJ);//-----INSERE O ENDEREÇO DE E-MAIL CADASTRADO NA LISTA DA ALL-IN(AINDA NÃO HOMOLOGADO)-----
+                        //var InsertEmail = MTD_InsertEmail(Email, Nome, CNPJ);//-----INSERE O ENDEREÇO DE E-MAIL CADASTRADO NA LISTA DA ALL-IN(AINDA NÃO HOMOLOGADO)-----
                         //var status = MTD_EmailDisparo(Email, Nome); //----FUNCIONALIDADE DESCONTINUADA-----
                         retornoRequisicao.PRP_Status = true;
                         retornoRequisicao.PRP_Mensagem = $"Cadastro realizado com sucesso!";
