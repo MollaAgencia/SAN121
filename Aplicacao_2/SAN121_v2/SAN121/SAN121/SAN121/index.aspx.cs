@@ -45,7 +45,7 @@ namespace SAN121
                 MollaLibrary.DataSource.MicrosoftSqlServer sqlServerConsulta = new MollaLibrary.DataSource.MicrosoftSqlServer(Classes.COMMON.PRP_ConnectionString);
                 System.Data.SqlClient.SqlParameterCollection sqlParameterConsulta = sqlServerConsulta.InicializaSqlParameterCollection;
                 sqlParameterConsulta.Add("@Email", System.Data.SqlDbType.VarChar).Value = Email;
-                System.Data.DataTable dtb_resultado = sqlServerConsulta.DbExecute("sp_site_consultaEmailTeste", sqlParameterConsulta, System.Data.CommandType.StoredProcedure);
+                System.Data.DataTable dtb_resultado = sqlServerConsulta.DbExecute("sp_site_consultaEmail", sqlParameterConsulta, System.Data.CommandType.StoredProcedure);
                 if (dtb_resultado != null)
                 {
                     retornoRequisicao.PRP_Status = false;
@@ -66,9 +66,9 @@ namespace SAN121
                     sqlParameter.Add("@profissional", System.Data.SqlDbType.VarChar).Value = profissional;
                     sqlParameter.Add("@profissao", System.Data.SqlDbType.VarChar).Value = profissao;
                     sqlParameter.Add("@conselho", System.Data.SqlDbType.VarChar).Value = conselho;
-                    sqlParameter.Add("@CanalPreferencia", System.Data.SqlDbType.VarChar).Value = CanalPreferencia;                   
-                    
-                    int dtb_result = sqlServer.DbExecuteNonQuery("sp_site_cadastrarCampanhaTeste", sqlParameter, System.Data.CommandType.StoredProcedure);
+                    sqlParameter.Add("@CanalPreferencia", System.Data.SqlDbType.VarChar).Value = CanalPreferencia;
+
+                    int dtb_result = sqlServer.DbExecuteNonQuery("sp_site_cadastrarCampanha", sqlParameter, System.Data.CommandType.StoredProcedure);
                     if (dtb_result > 0)
                     {
                         //var InsertEmail = MTD_InsertEmail(Email, Nome, CNPJ);//-----INSERE O ENDEREÇO DE E-MAIL CADASTRADO NA LISTA DA ALL-IN(AINDA NÃO HOMOLOGADO)-----
@@ -199,8 +199,8 @@ namespace SAN121
             {
                 listaEmail = "WORK_VISITADO";
                 campoCNPJ = "CNPJWORKVISITADO";
-            }            
-            
+            }
+
             string dadosPOST = "{\"nm_lista\":\"" + listaEmail + "\",\"campos\":\"nm_email;nome;" + campoCNPJ + "\",\"valor\":\"" + pEmail + ";" + pNpme + ";" + pCNPJ.Replace(".", "").Replace("-", "").Replace("/", "") + "\"}";
 
             var token = MTD_GetTokenAPI();
@@ -243,7 +243,7 @@ namespace SAN121
             {
                 ret = false;
                 throw;
-            }            
+            }
             return ret;
         }
     }

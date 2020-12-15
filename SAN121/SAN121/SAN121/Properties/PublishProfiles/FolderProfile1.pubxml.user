@@ -10,10 +10,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="bin/MollaLibrary.dll">
-      <publishTime>04/22/2020 10:19:24</publishTime>
+      <publishTime>09/08/2020 09:39:52</publishTime>
     </File>
     <File Include="bin/MollaLibrary.pdb">
       <publishTime>04/22/2020 10:19:24</publishTime>
@@ -22,133 +22,133 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/28/2016 15:22:24</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
-      <publishTime>04/22/2020 14:55:35</publishTime>
+      <publishTime>09/11/2020 10:10:23</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe.config">
-      <publishTime>04/22/2020 14:55:35</publishTime>
+      <publishTime>09/11/2020 10:10:23</publishTime>
     </File>
     <File Include="bin/roslyn/csc.rsp">
-      <publishTime>04/22/2020 14:55:35</publishTime>
+      <publishTime>09/11/2020 10:10:23</publishTime>
     </File>
     <File Include="bin/roslyn/csi.exe">
-      <publishTime>04/22/2020 14:55:35</publishTime>
+      <publishTime>09/11/2020 10:10:23</publishTime>
     </File>
     <File Include="bin/roslyn/csi.rsp">
-      <publishTime>04/22/2020 14:55:35</publishTime>
+      <publishTime>09/11/2020 10:10:23</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="bin/roslyn/System.AppContext.dll">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="bin/roslyn/System.Collections.Immutable.dll">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:23</publishTime>
     </File>
     <File Include="bin/roslyn/System.IO.FileSystem.dll">
-      <publishTime>04/22/2020 14:55:35</publishTime>
+      <publishTime>09/11/2020 10:10:23</publishTime>
     </File>
     <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
-      <publishTime>04/22/2020 14:55:35</publishTime>
+      <publishTime>09/11/2020 10:10:23</publishTime>
     </File>
     <File Include="bin/roslyn/System.Reflection.Metadata.dll">
-      <publishTime>04/22/2020 14:55:35</publishTime>
+      <publishTime>09/11/2020 10:10:23</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.exe">
-      <publishTime>04/22/2020 14:55:35</publishTime>
+      <publishTime>09/11/2020 10:10:23</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.exe.config">
-      <publishTime>04/22/2020 14:55:35</publishTime>
+      <publishTime>09/11/2020 10:10:23</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.rsp">
-      <publishTime>04/22/2020 14:55:35</publishTime>
+      <publishTime>09/11/2020 10:10:23</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe">
-      <publishTime>04/22/2020 14:55:35</publishTime>
+      <publishTime>09/11/2020 10:10:23</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
-      <publishTime>04/22/2020 14:55:35</publishTime>
+      <publishTime>09/11/2020 10:10:23</publishTime>
     </File>
     <File Include="bin/SAN121.dll">
-      <publishTime>08/20/2020 13:57:16</publishTime>
+      <publishTime>12/15/2020 17:16:54</publishTime>
     </File>
     <File Include="bin/SAN121.pdb">
-      <publishTime>08/20/2020 13:57:16</publishTime>
+      <publishTime>12/15/2020 17:16:54</publishTime>
     </File>
     <File Include="css/bootstrap-multiselect.css">
-      <publishTime>04/23/2020 13:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="css/bootstrap.min.css">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="css/style.css">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="img/bg-image.jpg">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="img/logo-sanofi.png">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="index.aspx">
-      <publishTime>08/20/2020 11:52:55</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="js/bootstrap-multiselect.min.js">
-      <publishTime>04/23/2020 14:07:43</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="js/bootstrap.min.js">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="js/jquery-3.3.1.js">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="js/mascaraValidacao.js">
-      <publishTime>08/17/2020 13:23:20</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="js/popper.min.js">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="js/script.js">
-      <publishTime>08/20/2020 13:54:10</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="Master.Master">
-      <publishTime>04/23/2020 14:16:05</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="Sucesso.aspx">
-      <publishTime>04/22/2020 14:55:34</publishTime>
+      <publishTime>09/11/2020 10:10:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/28/2020 17:06:54</publishTime>
+      <publishTime>12/02/2020 14:44:21</publishTime>
     </File>
   </ItemGroup>
 </Project>

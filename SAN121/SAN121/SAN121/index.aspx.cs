@@ -47,7 +47,7 @@ namespace SAN121
                 MollaLibrary.DataSource.MicrosoftSqlServer sqlServerConsulta = new MollaLibrary.DataSource.MicrosoftSqlServer(Classes.COMMON.PRP_ConnectionString);
                 System.Data.SqlClient.SqlParameterCollection sqlParameterConsulta = sqlServerConsulta.InicializaSqlParameterCollection;
                 sqlParameterConsulta.Add("@Email", System.Data.SqlDbType.VarChar).Value = Email;
-                System.Data.DataTable dtb_resultado = sqlServerConsulta.DbExecute("sp_site_consultaEmailTeste", sqlParameterConsulta, System.Data.CommandType.StoredProcedure);
+                System.Data.DataTable dtb_resultado = sqlServerConsulta.DbExecute("sp_site_consultaEmail", sqlParameterConsulta, System.Data.CommandType.StoredProcedure);
                 if (dtb_resultado != null)
                 {
                     retornoRequisicao.PRP_Status = false;
@@ -56,29 +56,29 @@ namespace SAN121
                 }
                 else if (dtb_resultado == null)
                 {
-                    List<SAN121.Classes.Cadastro> cadastros = new List<Classes.Cadastro>();
-                    MollaLibrary.DataSource.MicrosoftSqlServer sqlServer = new MollaLibrary.DataSource.MicrosoftSqlServer(SAN121.Classes.COMMON.PRP_ConnectionString);
-                    System.Data.SqlClient.SqlParameterCollection sqlParameter = sqlServer.InicializaSqlParameterCollection;
+                List<SAN121.Classes.Cadastro> cadastros = new List<Classes.Cadastro>();
+                MollaLibrary.DataSource.MicrosoftSqlServer sqlServer = new MollaLibrary.DataSource.MicrosoftSqlServer(SAN121.Classes.COMMON.PRP_ConnectionString);
+                System.Data.SqlClient.SqlParameterCollection sqlParameter = sqlServer.InicializaSqlParameterCollection;
 
-                    sqlParameter.Add("@Nome", System.Data.SqlDbType.VarChar).Value = Nome;
-                    sqlParameter.Add("@Email", System.Data.SqlDbType.VarChar).Value = Email;
-                    sqlParameter.Add("@Telefone", System.Data.SqlDbType.VarChar).Value = Telefone;
-                    sqlParameter.Add("@CNPJ", System.Data.SqlDbType.VarChar).Value = CNPJ;
-                    sqlParameter.Add("@Origem", System.Data.SqlDbType.Char).Value = "CON";
-                    sqlParameter.Add("@profissional", System.Data.SqlDbType.VarChar).Value = profissional;
-                    sqlParameter.Add("@profissao", System.Data.SqlDbType.VarChar).Value = profissao;
-                    sqlParameter.Add("@conselho", System.Data.SqlDbType.VarChar).Value = conselho;
-                    sqlParameter.Add("@CanalPreferencia", System.Data.SqlDbType.VarChar).Value = CanalPreferencia;
+                sqlParameter.Add("@Nome", System.Data.SqlDbType.VarChar).Value = Nome;
+                sqlParameter.Add("@Email", System.Data.SqlDbType.VarChar).Value = Email;
+                sqlParameter.Add("@Telefone", System.Data.SqlDbType.VarChar).Value = Telefone;
+                sqlParameter.Add("@CNPJ", System.Data.SqlDbType.VarChar).Value = CNPJ;
+                sqlParameter.Add("@Origem", System.Data.SqlDbType.Char).Value = "CON";
+                sqlParameter.Add("@profissional", System.Data.SqlDbType.VarChar).Value = profissional;
+                sqlParameter.Add("@profissao", System.Data.SqlDbType.VarChar).Value = profissao;
+                sqlParameter.Add("@conselho", System.Data.SqlDbType.VarChar).Value = conselho;
+                sqlParameter.Add("@CanalPreferencia", System.Data.SqlDbType.VarChar).Value = CanalPreferencia;
 
-                    int dtb_result = sqlServer.DbExecuteNonQuery("sp_site_cadastrarCampanhaTeste", sqlParameter, System.Data.CommandType.StoredProcedure);
-                    if (dtb_result > 0)
-                    {
-                        //var InsertEmail = MTD_InsertEmail(Email, Nome, CNPJ);//-----INSERE O ENDEREÇO DE E-MAIL CADASTRADO NA LISTA DA ALL-IN(AINDA NÃO HOMOLOGADO)-----
-                        //var status = MTD_EmailDisparo(Email, Nome); //----FUNCIONALIDADE DESCONTINUADA-----
-                        retornoRequisicao.PRP_Status = true;
-                        retornoRequisicao.PRP_Mensagem = $"Cadastro realizado com sucesso!";
-                        retornoRequisicao.PRP_TipoMensagem = MollaLibrary.EnunsApp.enum_TipoMensagem.Success;
-                    }
+                int dtb_result = sqlServer.DbExecuteNonQuery("sp_site_cadastrarCampanha", sqlParameter, System.Data.CommandType.StoredProcedure);
+                if (dtb_result > 0)
+                {
+                    //var InsertEmail = MTD_InsertEmail(Email, Nome, CNPJ);//-----INSERE O ENDEREÇO DE E-MAIL CADASTRADO NA LISTA DA ALL-IN(AINDA NÃO HOMOLOGADO)-----
+                    //var status = MTD_EmailDisparo(Email, Nome); //----FUNCIONALIDADE DESCONTINUADA-----
+                    retornoRequisicao.PRP_Status = true;
+                    retornoRequisicao.PRP_Mensagem = $"Cadastro realizado com sucesso!";
+                    retornoRequisicao.PRP_TipoMensagem = MollaLibrary.EnunsApp.enum_TipoMensagem.Success;
+                }
                 }
             }
             catch (Exception ex)
@@ -192,7 +192,7 @@ namespace SAN121
             System.Data.SqlClient.SqlParameterCollection sqlParameterConsulta = sqlServerConsulta.InicializaSqlParameterCollection;
             sqlParameterConsulta.Add("@CNPJ", System.Data.SqlDbType.NVarChar).Value = pCNPJ.Replace(".", "").Replace("-", "").Replace("/", "");
             System.Data.DataTable dtb_resultado = sqlServerConsulta.DbExecute("SELECT CNPJ FROM Painel_Visitado_GEM WHERE CNPJ = @CNPJ", sqlParameterConsulta, System.Data.CommandType.Text);
-            
+
             if (dtb_resultado != null)
             {
                 listaEmail = "WORK_VISITADO";
@@ -202,8 +202,8 @@ namespace SAN121
             {
                 listaEmail = "WORK_CONECTA";
                 campoCNPJ = "CNPJWORKCONECTA";
-            }            
-            
+            }
+
             string dadosPOST = "{\"nm_lista\":\"" + listaEmail + "\",\"campos\":\"nm_email;nome;" + campoCNPJ + "\",\"valor\":\"" + pEmail + ";" + pNpme + ";" + pCNPJ.Replace(".", "").Replace("-", "").Replace("/", "") + "\"}";
 
             var token = MTD_GetTokenAPI();
@@ -248,7 +248,7 @@ namespace SAN121
             {
                 ret = false;
                 throw;
-            }            
+            }
             return ret;
         }
     }
