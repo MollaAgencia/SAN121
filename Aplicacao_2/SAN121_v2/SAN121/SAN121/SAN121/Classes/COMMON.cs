@@ -11,7 +11,7 @@ namespace SAN121.Classes
         {
             get
             {
-                return @"Data Source=molla.csjvcqt790vh.us-east-1.rds.amazonaws.com; Initial Catalog=SAN121 ;User ID=SAN121;Password=@@iot2019@@;Connection Timeout=120";
+                return @"Data Source=mollahml.database.windows.net;Initial Catalog=db_emktMolla;User ID=admin_sql;Password=molla191207@@;Connect Timeout=120;";
             }
         }
     }
